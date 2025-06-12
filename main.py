@@ -1827,7 +1827,6 @@ app.add_middleware(
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
-)
 
 # --- PostgreSQL Database Setup ---
 DATABASE_URL = "postgresql://MikrotikDB_owner:npg_56LBlfUTePyM@ep-wispy-scene-a8v3hj9a-pooler.eastus2.azure.neon.tech/MikrotikDB?sslmode=require"
