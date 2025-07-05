@@ -1827,6 +1827,7 @@ app.add_middleware(
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
+)
 
 # --- PostgreSQL Database Setup ---
 DATABASE_URL = "postgresql://MikrotikDB_owner:npg_56LBlfUTePyM@ep-wispy-scene-a8v3hj9a-pooler.eastus2.azure.neon.tech/MikrotikDB?sslmode=require"
@@ -2534,7 +2535,7 @@ def test_mikrotik_ssh_connection(device: MikroTikSSHTestRequest):
         raise HTTPException(status_code=500, detail=f"SSH connection failed: {str(e)}")
 
 # Update device status endpoint
-@app.put("/mikrotik-devices/{device_id}/status")
+@app.put("/mikrotik-devices /{device_id}/status")
 def update_device_status(device_id: int, status: str, db: Session = Depends(get_db)):
     try:
         device = db.query(MikroTikDevice).filter(MikroTikDevice.id == device_id).first()
